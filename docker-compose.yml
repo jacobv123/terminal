@@ -9,12 +9,12 @@ services:
       - NEXT_PUBLIC_ENABLE_TRACKING=${ENABLE_TRACKING}
       - NEXT_PUBLIC_TRACKING_URL=${TRACKING_URL}
       - NEXT_PUBLIC_TRACKING_SITE_ID=${TRACKING_SITE_ID}
-      - VIRTUAL_HOST=localhost
-      - VIRTUAL_POST=3000
+      - VIRTUAL_HOST=${VHOST}
+      - VIRTUAL_POST=${VHOST_PORT}
     ports:
       - 3000:3000
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      test: ["CMD", "curl", "-f", "http://${VHOST}:${VHOST_PORT}"]
       interval: 200s
       timeout: 200s
       retries: 5
