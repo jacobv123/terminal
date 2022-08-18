@@ -11,6 +11,7 @@ services:
       - NEXT_PUBLIC_TRACKING_SITE_ID=${TRACKING_SITE_ID}
       - VIRTUAL_HOST=${VHOST}
       - VIRTUAL_POST=${VHOST_PORT}
+      - LETSENCRYPT_HOST=${VHOST}
     ports:
       - 3000:3000
     healthcheck:
